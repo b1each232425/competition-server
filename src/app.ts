@@ -47,9 +47,9 @@ app.use((e, req: Request, res: Response, next: NextFunction) => {
   next(e);
 });
 
-app.listen(3000, function() {
+app.listen(5000, function() {
   consola.ready({
-    message: `Server is listening on http://localhost:${3000}`,
+    message: `Server is listening on http://localhost:${5000}`,
     badge: true,
   });
 });

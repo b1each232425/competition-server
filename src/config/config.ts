@@ -7,8 +7,8 @@ export const cookieKey = 'cookie-ncu_university-competition_server';
 export const DataBaseConfig: Options = {
   dialect: 'mysql', // 数据库使用mysql
   port: 3306, // 数据库服务器端口
-  host: '', // 数据库服务器ip
-  database: '', // 数据库名
-  username: '', // 用户名
-  password: '', // 用户密码
+  host: 'localhost', // 数据库服务器ip
+  database: 'emosheep', // 数据库名
+  username: 'root', // 用户名
+  password: '1164657389abc', // 用户密码
 };

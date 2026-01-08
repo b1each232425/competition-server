@@ -1,3 +1,4 @@
+
 import { Request, Response, Router } from 'express';
 import { getUserModel, likeQuery, sequelize } from '@/db/model';
 import { compact, set, toNumber } from 'lodash';
@@ -50,7 +51,7 @@ router.post('/user/import', async (req: Request, res: Response) => {
   const UserModel = getUserModel(type);
 
   await sequelize.transaction(async transaction => {
-    await UserModel.bulkCreate(unexists, { transaction, validate: true });
+   await UserModel.bulkCreate(unexists as any, { transaction, validate: true });
   });
 
   if (exists.length !== 0) {

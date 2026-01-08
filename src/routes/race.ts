@@ -16,13 +16,14 @@ router.get('/race/list', async (req: Request, res: Response) => {
     ...query
   } = req.query;
 
-  Object.assign(query, likeQuery({ title, location, sponsor }));
+  const where: any = query;
+  Object.assign(where, likeQuery({ title, location, sponsor }));
   if (typeof date === 'string') {
-    query.date = { [Op.between]: date.split('~') };
+    where.date = { [Op.between]: date.split('~') };
   }
 
   const { rows, count } = await Races.findAndCountAll({
-    where: query,
+    where,
     limit: toNumber(limit) || undefined,
     offset: toNumber(limit) * (toNumber(offset) - 1) || undefined,
   });
